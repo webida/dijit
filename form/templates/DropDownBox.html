@@ -1,9 +1,15 @@
 <div class="dijit dijitReset dijitInline dijitLeft"
 	id="widget_${id}"
-	role="combobox"
+	xrole="combobox"
 	aria-haspopup="true"
 	data-dojo-attach-point="_popupStateNode"
-	><div class='dijitReset dijitRight dijitButtonNode dijitArrowButton dijitDownArrowButton dijitArrowButtonContainer'
+	><!--
+"combobox" role causes Chrome freezing in a certain circumstance.
+Temporarily disable role="combobox" attribute.
+See the following links for more information.
+https://github.com/webida/webida-client/issues/854
+https://code.google.com/p/chromium/issues/detail?id=571347
+--><div class='dijitReset dijitRight dijitButtonNode dijitArrowButton dijitDownArrowButton dijitArrowButtonContainer'
 		data-dojo-attach-point="_buttonNode" role="presentation"
 		><input class="dijitReset dijitInputField dijitArrowButtonInner" value="&#9660; " type="text" tabIndex="-1" readonly="readonly" role="button presentation" aria-hidden="true"
 			${_buttonInputDisabled}
